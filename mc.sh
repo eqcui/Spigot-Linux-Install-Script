@@ -1,18 +1,10 @@
 #!/bin/bash
-sudo apt update && sudo apt upgrade
-sudo apt install zip && sudo apt install zip && sudo apt install git && sudo apt install curl 
+sudo apt update && sudo apt upgrade && sudo apt install zip && sudo apt install zip && sudo apt install git && sudo apt install curl && sudo apt-get install openjdk-18-jre -y
 
-curl -s "https://get.sdkman.io" | bash
-source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-sdk install java 18.0.1.1-librca
-
-cd
-mkdir minecraft
-cd minecraft
+cd && mkdir minecraft && cd minecraft
 
 wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
 
 git config --global --unset core.autocrlf
 
-java -Xmx1024M -jar BuildTools.jar
+java -jar BuildTools.jar
